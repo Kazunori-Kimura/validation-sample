@@ -7,6 +7,7 @@ import {
   useFunctionKeys,
 } from "@/shared/hooks/useFunctionKeys";
 import { useCallback, useRef, useState } from "react";
+import GitHubButton from "react-github-btn";
 
 export default function PageView() {
   // ファンクションキーに対応するボタンへの参照を管理するためのref
@@ -18,7 +19,7 @@ export default function PageView() {
 
   // 数値入力の値を管理するためのステート
   const [value, setValue] = useState("");
-  
+
   // ファンクションキーが押されたときに対応するボタンをクリックする
   const handleFunctionButtonClick = useCallback((functionKey: FunctionKey) => {
     const button = buttonsRef.current[functionKey];
@@ -46,13 +47,34 @@ export default function PageView() {
   return (
     <div className="flex flex-1 flex-col w-full justify-center p-8 bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 flex-col gap-y-4 bg-white dark:bg-black sm:items-start">
+        <div className="flex flex-row gap-x-4 items-start">
+          <a
+            href="https://github.com/Kazunori-Kimura/validation-sample"
+            className="inline-flex items-center rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200 dark:hover:bg-zinc-800"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+          <GitHubButton
+            href="https://github.com/Kazunori-Kimura/validation-sample"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-icon="octicon-star"
+            data-size="large"
+            aria-label="Star Kazunori-Kimura/validation-sample on GitHub"
+          >
+            Star
+          </GitHubButton>
+        </div>
         <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
           数値入力とファンクションキーのデモ
         </h1>
         <h2 className="text-xl font-medium leading-8 tracking-tight text-gray-700 dark:text-gray-300">
           ime_input
         </h2>
-        <p className="text-gray-700 dark:text-gray-300">全角数値を半角数値に強制変換し、数値以外の入力を拒否します。</p>
+        <p className="text-gray-700 dark:text-gray-300">
+          全角数値を半角数値に強制変換し、数値以外の入力を拒否します。
+        </p>
         <NumericInput
           value={value}
           onChange={(e) => setValue(e.target.value)}
@@ -64,7 +86,9 @@ export default function PageView() {
         <h2 className="text-xl font-medium leading-8 tracking-tight text-gray-700 dark:text-gray-300">
           shortcut
         </h2>
-        <p className="text-gray-700 dark:text-gray-300">F1-F12キーを押すと、対応するボタンがクリックされます。</p>
+        <p className="text-gray-700 dark:text-gray-300">
+          F1-F12キーを押すと、対応するボタンがクリックされます。
+        </p>
 
         <div className="flex flex-row flex-wrap gap-4">
           {FunctionKeys.map((fk, index) => (
