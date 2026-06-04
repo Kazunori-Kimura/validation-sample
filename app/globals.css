@@ -24,3 +24,163 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.explanation-content {
+  color: #27272a;
+  line-height: 1.75;
+}
+
+.explanation-content > * + * {
+  margin-top: 1rem;
+}
+
+.explanation-content h2,
+.explanation-content h3,
+.explanation-content h4 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.explanation-content p {
+  margin: 0.75rem 0;
+}
+
+.explanation-content ul,
+.explanation-content ol {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.explanation-content li {
+  margin: 0.25rem 0;
+}
+
+.explanation-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: #f4f4f5;
+  color: #be123c;
+  border-radius: 0.35rem;
+  padding: 0.12rem 0.35rem;
+  font-size: 0.92em;
+}
+
+.explanation-content pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #1e293b;
+}
+
+.explanation-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.explanation-content blockquote {
+  margin: 1rem 0;
+  border-left: 4px solid #d4d4d8;
+  padding-left: 1rem;
+  color: #52525b;
+}
+
+.explanation-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.explanation-content th,
+.explanation-content td {
+  border: 1px solid #e4e4e7;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.explanation-content thead th {
+  background: #f4f4f5;
+}
+
+.explanation-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.explanation-content hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 1.25rem 0;
+}
+
+.explanation-content .hljs-keyword,
+.explanation-content .hljs-selector-tag,
+.explanation-content .hljs-built_in,
+.explanation-content .hljs-name,
+.explanation-content .hljs-tag {
+  color: #c4b5fd;
+}
+
+.explanation-content .hljs-string,
+.explanation-content .hljs-attr,
+.explanation-content .hljs-template-tag,
+.explanation-content .hljs-template-variable {
+  color: #86efac;
+}
+
+.explanation-content .hljs-number,
+.explanation-content .hljs-literal,
+.explanation-content .hljs-symbol,
+.explanation-content .hljs-bullet {
+  color: #f9a8d4;
+}
+
+.explanation-content .hljs-comment,
+.explanation-content .hljs-quote,
+.explanation-content .hljs-deletion {
+  color: #94a3b8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .explanation-panel {
+    background: #09090b;
+  }
+
+  .explanation-content {
+    color: #e4e4e7;
+  }
+
+  .explanation-content h2,
+  .explanation-content h3,
+  .explanation-content h4 {
+    color: #fafafa;
+  }
+
+  .explanation-content code {
+    background: #27272a;
+    color: #fda4af;
+  }
+
+  .explanation-content blockquote {
+    border-left-color: #3f3f46;
+    color: #a1a1aa;
+  }
+
+  .explanation-content th,
+  .explanation-content td {
+    border-color: #3f3f46;
+  }
+
+  .explanation-content thead th {
+    background: #27272a;
+  }
+
+  .explanation-content hr {
+    border-top-color: #3f3f46;
+  }
+}
